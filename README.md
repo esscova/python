@@ -1,12 +1,7 @@
 # Python
-
-<div style="display:flex; align-items:center; gap:1rem">
-    <img src="https://s3.dualstack.us-east-2.amazonaws.com/pythondotorg-assets/media/files/python-logo-only.svg"/>
-    <p>Python é uma linguagem de programação de alto nível, interpretada, de propósito geral e de código aberto. Ela é conhecida por sua sintaxe simples e elegante, o que a torna fácil de aprender e utilizar.
-    </p>
-</div>
-
-Python é amplamente utilizada em diversas áreas, incluindo:
+<img align='right' src="https://s3.dualstack.us-east-2.amazonaws.com/pythondotorg-assets/media/files/python-logo-only.svg"/>
+Python é uma linguagem de programação de alto nível, interpretada, de propósito geral e de código aberto. Ela é conhecida por sua sintaxe simples e elegante, o que a torna fácil de aprender e utilizar.<br><br>
+Python é amplamente utilizada em diversas áreas, incluindo:<br><br>
 
 - Desenvolvimento web: Python é muito popular para a criação de aplicações web, com frameworks como Django e Flask.
 - Ciência de dados e análise de dados: Python é uma das linguagens mais utilizadas para tarefas de análise de dados, aprendizado de máquina e inteligência artificial, com bibliotecas como NumPy, Pandas e Scikit-learn.
@@ -20,10 +15,9 @@ Portanto, Python é uma linguagem versátil e amplamente adotada, com uma vasta 
 [Documentação Oficial](https://docs.python.org/3/)
 
 ## Conteúdo
-Este repositório contém uma coleção de projetos e scripts Python que cobrem meu aprendizado com projetos e exercícios.
 
-### [Starter](./starter/README.md) : Contatos inciais com a linguagem.
-### [FastAPI](./fastapi/) : Framework web para construção de APIs.
+- ### [Starter](./starter/README.md) : Contatos inciais com a linguagem.
+- ### [FastAPI](./fastapi/) : Framework web para construção de APIs.
 
 ## Como executar os projetos
 Abra o terminal ou prompt de comando do seu sistema operacional e digite os seguintes comandos:
