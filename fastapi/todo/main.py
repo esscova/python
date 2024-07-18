@@ -4,7 +4,7 @@ from typing import List, Dict
 
 app = FastAPI() # instancia 
 
-tasks = [] #mock db
+tasks:List[Dict] = [] #mock db
 
 class Task(BaseModel): # modelo de dados
 	id:int
