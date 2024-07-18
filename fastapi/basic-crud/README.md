@@ -29,4 +29,3 @@ uvicorn main:app --reload
 - **POST /items/**: Cria um novo item.
 - **PUT /items/{item_id}**: Atualiza um item existente pelo seu ID.
 - **DELETE /items/{item_id}**: Deleta um item pelo seu ID.
-
