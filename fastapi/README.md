@@ -31,3 +31,4 @@ O FastAPI pode ser usado em uma ampla variedade de aplicações, incluindo:
 ## Conteúdo do repositório
 - **Hello World** : Aplicação mais simplista para interação inicial com o framework.
 - **Basic CRUD** : API básica fornecendo operações CRUD (Create, Read, Update, Delete) na manipulação de itens.
+- **To-do List** : API simples para gerenciar tarefas (tasks). 
