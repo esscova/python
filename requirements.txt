@@ -1,2 +1,5 @@
 fastapi==0.111.1
 uvicorn==0.30.1
+requests==2.31.0
+anyio==3.5.0
+
