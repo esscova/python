@@ -33,3 +33,4 @@ O FastAPI pode ser usado em uma ampla variedade de aplicações, incluindo:
 - **Basic CRUD** : API básica fornecendo operações CRUD (Create, Read, Update, Delete) na manipulação de itens.
 - **To-do List** : API simples para gerenciar tarefas (tasks). 
 - **User management** : API para gerenciar usarios.
+- **Currency Converter** : API para obter taxas de câmbio em tempo real e oferece endpoints para converter valores entre diferentes moedas.
