@@ -1,0 +1,38 @@
+---
+title: "Demonstração do Resultado do Exercício"
+subtitle: "Empresa XPTO Ltda."
+date: today
+format: pdf
+jupyter: python3
+---
+
+## Demonstração do Resultado 
+
+A seguir é apresentada a Demonstração do Resultado do Exercício (DRE), evidenciando a formação do lucro da empresa a partir das receitas, deduções e custos do período.
+
+```{python}
+#| echo: false
+
+import pandas as pd
+
+dre = {
+    "Descrição": [
+        "Receita Bruta",
+        "(-) Impostos",
+        "(=) Receita Líquida",
+        "(-) Custos",
+        "(=) Lucro Bruto"
+    ],
+    "Valor (R$)": [
+        "1.000.000,00",
+        "-150.000,00",
+        "850.000,00",
+        "-400.000,00",
+        "450.000,00"
+    ]
+}
+
+df = pd.DataFrame(dre)
+
+df
+```

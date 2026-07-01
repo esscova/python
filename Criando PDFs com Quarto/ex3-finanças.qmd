@@ -1,0 +1,202 @@
+---
+title: "Relatório de Risco de Carteira"
+subtitle: "Análise de Value at Risk (VaR) e Índice de Sharpe"
+author: "Wellington Moreira"
+date: today
+lang: pt-BR
+jupyter: python3
+
+format:
+  pdf:
+    toc: true
+    number-sections: true
+    colorlinks: true
+    geometry:
+      - margin=2.5cm
+---
+
+# Introdução
+
+Este relatório apresenta uma análise simplificada de risco de uma carteira de investimentos utilizando Python e Quarto.
+
+Como exemplo didático, são simulados retornos diários de uma carteira de ações para demonstrar o cálculo de duas métricas amplamente utilizadas no mercado financeiro:
+
+* Value at Risk (VaR)
+* Índice de Sharpe
+
+Além dos cálculos estatísticos, o relatório utiliza fórmulas em LaTeX, tabelas e gráficos gerados automaticamente durante a renderização do documento.
+
+# Metodologia
+
+Para fins de demonstração, considera-se uma série de retornos diários simulados seguindo uma distribuição normal.
+
+O retorno diário da carteira é representado por
+
+$$
+R_t \sim N(\mu,\sigma)
+$$
+
+onde
+
+* $\mu$ representa o retorno médio esperado;
+* $\sigma$ representa a volatilidade da carteira.
+
+## Value at Risk (VaR)
+
+O VaR paramétrico estima a perda máxima esperada para determinado nível de confiança.
+
+Sua forma simplificada é dada por
+
+$$
+VaR_{95\%}
+=
+-\left(
+\mu
++
+z_{0.05}\sigma
+\right)
+$$
+
+onde
+
+* $\mu$ é o retorno médio;
+* $\sigma$ é o desvio padrão;
+* $z_{0.05}$ representa o quantil da distribuição Normal correspondente ao nível de confiança.
+
+## Índice de Sharpe
+
+O Índice de Sharpe mede o retorno obtido por unidade de risco.
+
+$$
+Sharpe
+=
+\frac{R_p-R_f}{\sigma}
+$$
+
+onde
+
+* $R_p$ é o retorno médio da carteira;
+* $R_f$ é a taxa livre de risco;
+* $\sigma$ representa a volatilidade.
+
+# Simulação da Carteira
+
+```{python}
+#| label: sim
+#| echo: true
+#| warning: false
+#| message: false
+
+import numpy as np
+import pandas as pd
+import matplotlib.pyplot as plt
+
+np.random.seed(42)
+
+# Simulação de um ano de retornos diários
+retornos = np.random.normal(
+    loc=0.0005,
+    scale=0.02,
+    size=252
+)
+
+media = retornos.mean()
+volatilidade = retornos.std()
+
+# VaR Histórico
+var95 = np.percentile(retornos,5)
+
+# Taxa livre de risco diária
+rf = 0.0001
+
+# Índice de Sharpe
+sharpe = (media-rf)/volatilidade
+
+resumo = pd.DataFrame({
+    "Métrica":[
+        "Retorno Médio",
+        "Volatilidade",
+        "VaR (95%)",
+        "Sharpe"
+    ],
+    "Valor":[
+        media,
+        volatilidade,
+        var95,
+        sharpe
+    ]
+})
+
+resumo
+```
+
+# Resultados
+
+A tabela abaixo resume as principais métricas calculadas para a carteira simulada.
+
+```{python}
+#| echo: false
+
+resumo.style.format({
+    "Valor":"{:.4f}"
+})
+```
+
+# Distribuição dos Retornos
+
+O gráfico a seguir apresenta a distribuição dos retornos simulados.
+
+A linha vermelha representa o Value at Risk ao nível de confiança de 95%.
+
+```{python}
+#| echo: false
+#| fig-cap: "Distribuição dos retornos diários da carteira"
+
+plt.figure(figsize=(8,5))
+
+plt.hist(
+    retornos,
+    bins=35,
+    alpha=0.75,
+    edgecolor="white"
+)
+
+plt.axvline(
+    var95,
+    color="red",
+    linestyle="--",
+    linewidth=2,
+    label=f"VaR 95% = {var95:.2%}"
+)
+
+plt.title("Distribuição dos Retornos Diários")
+
+plt.xlabel("Retorno Diário")
+
+plt.ylabel("Frequência")
+
+plt.grid(alpha=0.3)
+
+plt.legend()
+
+plt.tight_layout()
+
+plt.show()
+```
+
+# Interpretação
+
+Os resultados indicam que:
+
+* o retorno médio diário da carteira foi positivo;
+* a volatilidade representa a variabilidade dos retornos;
+* o VaR indica a perda diária esperada para um nível de confiança de 95%;
+* o Índice de Sharpe permite avaliar o retorno obtido em relação ao risco assumido.
+
+Essas métricas são amplamente utilizadas em gestão de risco, análise quantitativa e avaliação de desempenho de carteiras.
+
+# Conclusão
+
+Este exemplo demonstra como o Quarto permite integrar documentação técnica, fórmulas matemáticas, código Python, tabelas e gráficos em um único relatório reproduzível.
+
+Na prática, essa mesma estrutura pode ser aplicada para gerar relatórios completos utilizando dados reais provenientes de APIs financeiras, bancos de dados SQL ou modelos quantitativos desenvolvidos em Python.
