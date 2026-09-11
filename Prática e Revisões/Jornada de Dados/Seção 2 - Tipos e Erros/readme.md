@@ -54,6 +54,24 @@ Instrutora: Luiza Vieira
 	-   Por que esses valores não podem ser utilizados dessa forma?
 	-   Corrija o programa para que o resultado exibido seja 3.
 
+- **Exercício 4 – Trabalhando com input()**
+
+	Crie um programa que pergunte ao usuário quantos gols uma seleção marcou em uma partida.
+
+	Depois:
+
+	    descubra o tipo do valor recebido diretamente pelo input();
+	    converta esse valor para int;
+	    mostre novamente o tipo depois da conversão;
+	    calcule quantos gols a seleção teria caso marcasse mais um.
+
+
+	Exemplo de entrada:
+
+	    Quantos gols a seleção marcou? 2
+	    Resultado esperado ao final:
+	    Com mais um gol, a seleção teria 3 gols.
+
 - **Exercício 5 – Convertendo valores decimais**
 
 	Crie um programa que peça ao usuário:  
